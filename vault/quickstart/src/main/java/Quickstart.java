@@ -59,6 +59,7 @@ public class Quickstart {
      */
     private static final List<String> SCOPES =
         Arrays.asList(VaultScopes.EDISCOVERY_READONLY);
+    private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
     static {
         try {
@@ -78,7 +79,7 @@ public class Quickstart {
     public static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in =
-            Quickstart.class.getResourceAsStream("/credentials.json");
+            Quickstart.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
         if (in == null) {
             throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
         }
